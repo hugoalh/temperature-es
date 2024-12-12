@@ -4,8 +4,8 @@ title: "Temperature (ES)"
 message: "If you use this software, please cite it using the metadata from this file."
 type: "software"
 authors:
-  - name: "hugoalh Studio"
-repository-code: "https://github.com/hugoalh-studio/temperature-es"
+  - name: "hugoalh"
+repository-code: "https://github.com/hugoalh/temperature-es"
 keywords:
   - "conversion"
   - "convert"

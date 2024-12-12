@@ -1,4 +1,4 @@
-import { assertEquals } from "STD/assert/assert-equals";
+import { assertEquals } from "STD/assert/equals";
 import { Temperature } from "./mod.ts";
 Deno.test("Conversion 1", { permissions: "none" }, async (t) => {
 	const temperatureRoomFromC = new Temperature(25, "C");
