@@ -1,50 +1,71 @@
 /**
- * ASCII symbol of all of the supported temperature units. Majorly use for internal index.
+ * ASCII symbol of all of the supported temperature units.
  */
-export const unitsSymbolASCII = Object.freeze({
-	C: "C",
-	De: "De",
-	F: "F",
-	K: "K",
-	N: "N",
-	R: "R",
-	Re: "Re",
-	Ro: "Ro"
-});
-export type TemperatureUnitsSymbolASCII = typeof unitsSymbolASCII[keyof typeof unitsSymbolASCII];
-const unitSI: TemperatureUnitsSymbolASCII = unitsSymbolASCII.K;
+export type TemperatureUnitsSymbolASCII =
+	| "C"
+	| "De"
+	| "F"
+	| "K"
+	| "N"
+	| "R"
+	| "Re"
+	| "Ro";
+const unitsSymbolASCII: readonly TemperatureUnitsSymbolASCII[] = ["C", "De", "F", "K", "N", "R", "Re", "Ro"];
+const unitSI: TemperatureUnitsSymbolASCII = "K";
 /**
- * Names of all of the supported temperature units. The standard name is at the first index.
+ * Names of all of the supported temperature units.
  */
-export const unitsNames = Object.freeze({
-	[unitsSymbolASCII.C]: ["Celsius"] as const,
-	[unitsSymbolASCII.De]: ["Delisle"] as const,
-	[unitsSymbolASCII.F]: ["Fahrenheit"] as const,
-	[unitsSymbolASCII.K]: ["Kelvin"] as const,
-	[unitsSymbolASCII.N]: ["Newton"] as const,
-	[unitsSymbolASCII.R]: ["Rankine"] as const,
-	[unitsSymbolASCII.Re]: ["Réaumur", "Reaumur"] as const,
-	[unitsSymbolASCII.Ro]: ["Rømer", "Roemer", "Romer"] as const
-});
-export type TemperatureUnitsNames = typeof unitsNames[keyof typeof unitsNames][number];
+export type TemperatureUnitsNames =
+	| "Celsius"
+	| "Delisle"
+	| "Fahrenheit"
+	| "Kelvin"
+	| "Newton"
+	| "Rankine"
+	| "Réaumur"
+	| "Reaumur"
+	| "Rømer"
+	| "Roemer"
+	| "Romer";
+const unitsNames: Record<TemperatureUnitsSymbolASCII, readonly TemperatureUnitsNames[]> = {
+	C: ["Celsius"],
+	De: ["Delisle"],
+	F: ["Fahrenheit"],
+	K: ["Kelvin"],
+	N: ["Newton"],
+	R: ["Rankine"],
+	Re: ["Réaumur", "Reaumur"],
+	Ro: ["Rømer", "Roemer", "Romer"]
+};
 /**
- * Symbols of all of the supported temperature units. The standard symbol is at the first index.
+ * Symbols of all of the supported temperature units.
  */
-export const unitsSymbols = Object.freeze({
-	[unitsSymbolASCII.C]: ["°C"] as const,
-	[unitsSymbolASCII.De]: ["°De", "D"] as const,
-	[unitsSymbolASCII.F]: ["°F"] as const,
-	[unitsSymbolASCII.K]: ["K"] as const,
-	[unitsSymbolASCII.N]: ["°N"] as const,
-	[unitsSymbolASCII.R]: ["°R", "Ra"] as const,
-	[unitsSymbolASCII.Re]: ["°Ré", "r"] as const,
-	[unitsSymbolASCII.Ro]: ["°Rø"] as const
-});
-export type TemperatureUnitsSymbols = typeof unitsSymbols[keyof typeof unitsSymbols][number];
+export type TemperatureUnitsSymbols =
+	| "°C"
+	| "°De"
+	| "D"
+	| "°F"
+	| "K"
+	| "°N"
+	| "°R"
+	| "Ra"
+	| "°Ré"
+	| "r"
+	| "°Rø";
+const unitsSymbols: Record<TemperatureUnitsSymbolASCII, readonly TemperatureUnitsSymbols[]> = {
+	C: ["°C"],
+	De: ["°De", "D"],
+	F: ["°F"],
+	K: ["K"],
+	N: ["°N"],
+	R: ["°R", "Ra"],
+	Re: ["°Ré", "r"],
+	Ro: ["°Rø"]
+};
 export type TemperatureUnitsInput = TemperatureUnitsSymbolASCII | TemperatureUnitsNames | TemperatureUnitsSymbols;
-const unitsInputs: Record<TemperatureUnitsSymbolASCII, TemperatureUnitsInput[]> = Object.fromEntries(Object.values(unitsSymbolASCII).map((key: TemperatureUnitsSymbolASCII): [TemperatureUnitsSymbolASCII, TemperatureUnitsInput[]] => {
-	return [key, [unitsSymbolASCII[key], ...unitsNames[key], ...unitsSymbols[key]]];
-})) as Record<TemperatureUnitsSymbolASCII, TemperatureUnitsInput[]>;
+const unitsInputs: Record<TemperatureUnitsSymbolASCII, readonly TemperatureUnitsInput[]> = Object.fromEntries(unitsSymbolASCII.map((unitSymbolASCII: TemperatureUnitsSymbolASCII): [TemperatureUnitsSymbolASCII, readonly TemperatureUnitsInput[]] => {
+	return [unitSymbolASCII, [unitSymbolASCII, ...unitsNames[unitSymbolASCII], ...unitsSymbols[unitSymbolASCII]]];
+})) as Record<TemperatureUnitsSymbolASCII, readonly TemperatureUnitsInput[]>;
 interface UnitConverter {
 	fromSI: (valueSI: number) => number;
 	toSI: (valueCurrent: number) => number;
@@ -221,7 +242,7 @@ export class Temperature {
 	 * @returns {TemperatureUnitMeta[]} Meta of the units.
 	 */
 	static units(): TemperatureUnitMeta[] {
-		return Object.values(unitsSymbolASCII).map((key: TemperatureUnitsSymbolASCII): TemperatureUnitMeta => {
+		return unitsSymbolASCII.map((key: TemperatureUnitsSymbolASCII): TemperatureUnitMeta => {
 			return resolveUnitMeta(key);
 		});
 	}
