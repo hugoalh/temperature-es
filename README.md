@@ -71,11 +71,11 @@ These units of the temperature are supported:
 
 - ```ts
   class Temperature {
-    constructor(fromValue: number, fromUnit: TemperatureUnitsInputs = "K");
+    constructor(fromValue: number, fromUnit?: TemperatureUnitsInputs);
     toObject(): Record<TemperatureUnitsSymbolASCII, number>;
-    toString(toUnit: TemperatureUnitsInputs = "K"): string;
-    toValue(toUnit: TemperatureUnitsInputs = "K"): number;
-    static unit(unit: TemperatureUnitsInputs = "K"): TemperatureUnitMeta;
+    toString(toUnit?: TemperatureUnitsInputs): string;
+    toValue(toUnit?: TemperatureUnitsInputs): number;
+    static unit(unit?: TemperatureUnitsInputs): TemperatureUnitMeta;
     static units(): TemperatureUnitMeta[];
   }
   ```
