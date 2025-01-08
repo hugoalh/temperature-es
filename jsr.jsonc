@@ -1,7 +1,7 @@
 {
 	"$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
 	"name": "@hugoalh/temperature",
-	"version": "3.0.0-beta.2",
+	"version": "3.0.0",
 	"exports": {
 		".": "./mod.ts"
 	},
