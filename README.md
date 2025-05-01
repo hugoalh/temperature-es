@@ -6,7 +6,7 @@
 [![JSR: @hugoalh/temperature](https://img.shields.io/jsr/v/@hugoalh/temperature?label=@hugoalh/temperature&labelColor=F7DF1E&logo=jsr&logoColor=000000&style=flat "JSR: @hugoalh/temperature")](https://jsr.io/@hugoalh/temperature)
 [![NPM: @hugoalh/temperature](https://img.shields.io/npm/v/@hugoalh/temperature?label=@hugoalh/temperature&labelColor=CB3837&logo=npm&logoColor=ffffff&style=flat "NPM: @hugoalh/temperature")](https://www.npmjs.com/package/@hugoalh/temperature)
 
-An ES (JavaScript & TypeScript) module to convert between units of the temperature.
+An ECMAScript (JavaScript & TypeScript) module to convert between units of the temperature.
 
 These units of the temperature are supported:
 
