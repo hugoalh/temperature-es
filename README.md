@@ -4,8 +4,8 @@
 
 🔗
 [GitHub](https://github.com/hugoalh/temperature-es)
-[JSR](https://jsr.io/@hugoalh/temperature)
-[NPM](https://www.npmjs.com/package/@hugoalh/temperature)
+● [JSR](https://jsr.io/@hugoalh/temperature)
+● [NPM](https://www.npmjs.com/package/@hugoalh/temperature)
 
 An ECMAScript module to convert between units of the temperature.
 
@@ -26,13 +26,13 @@ These units of the temperature are supported:
 
 ## 🔰 Begin
 
-### 🎯 Targets
+### 🎯 Runtime Targets
 
-| **Runtime \\ Source** | **GitHub Raw** | **JSR** | **NPM** |
-|:--|:-:|:-:|:-:|
-| **[Bun](https://bun.sh/)** >= v1.1.0 | ❌ | ✔️ | ✔️ |
-| **[Deno](https://deno.land/)** >= v2.1.0 | ✔️ | ✔️ | ✔️ |
-| **[NodeJS](https://nodejs.org/)** >= v20.9.0 | ❌ | ✔️ | ✔️ |
+Any runtime which support ECMAScript should able to use this; These runtimes are officially supported:
+
+- **[Bun](https://bun.sh/)** >= v1.1.0
+- **[Deno](https://deno.land/)** >= v2.1.0
+- **[NodeJS](https://nodejs.org/)** >= v20.9.0
 
 ### #️⃣ Resources Identifier
 
@@ -58,7 +58,7 @@ These units of the temperature are supported:
 
 ### 🛡️ Runtime Permissions
 
-*This module does not request any runtime permission.*
+This does not request any runtime permission.
 
 ## 🧩 APIs
 
