@@ -54,12 +54,10 @@ This does not request any runtime permission.
 
 - ```ts
   class Temperature {
-    constructor(fromValue: number, fromUnit?: TemperatureUnitsInputs);
+    constructor(fromValue: number, fromUnit: TemperatureUnitsInputs);
     toObject(): Record<TemperatureUnitsSymbolASCII, number>;
-    toString(toUnit?: TemperatureUnitsInputs): string;
-    toValue(toUnit?: TemperatureUnitsInputs): number;
-    static unit(unit?: TemperatureUnitsInputs): TemperatureUnitMeta;
-    static units(): TemperatureUnitMeta[];
+    toString(toUnit: TemperatureUnitsInputs): string;
+    toValue(toUnit: TemperatureUnitsInputs): number;
   }
   ```
 
@@ -71,19 +69,21 @@ This does not request any runtime permission.
 ## ✍️ Examples
 
 - ```ts
-  new Temperature(25, "C").toValue();
+  const instance = new Temperature(25, "C");
+
+  instance.toValue("K");
   //=> 298.15
-  ```
-- ```ts
-  new Temperature(25, "C").toString();
+
+  instance.toString("K");
   //=> "298.15 K"
   ```
 - ```ts
-  new Temperature(298.15).toValue("C");
+  const instance = new Temperature(298.15, "K");
+  
+  instance.toValue("C");
   //=> 25
-  ```
-- ```ts
-  new Temperature(298.15).toString("C");
+
+  instance.toString("C");
   //=> "25 °C"
   ```
 
