@@ -87,7 +87,7 @@ This does not request any runtime permission.
   //=> "25 °C"
   ```
 
-## 📚 External Resources
+## 📚 Resources
 
 - Wikipedia
   - [Conversion of scales of temperature](https://en.wikipedia.org/wiki/Conversion_of_scales_of_temperature)
