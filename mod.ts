@@ -170,7 +170,7 @@ function resolveUnitInput(parameterName: string, input: string): TemperatureUnit
 		symbols
 	}: TemperatureUnitInfo): string[] => {
 		return [...names, symbolASCII, ...symbols];
-	})).values()).sort().join(", ")}`);
+	})).values()).sort().join(", ")}.`);
 }
 /**
  * Convert between units of the temperature.
