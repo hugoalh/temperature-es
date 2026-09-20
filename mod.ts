@@ -43,7 +43,10 @@ export type TemperatureUnitsSymbols =
 /**
  * Inputs of all of the supported temperature units.
  */
-export type TemperatureUnitsInputs = TemperatureUnitsSymbolASCII | TemperatureUnitsNames | TemperatureUnitsSymbols;
+export type TemperatureUnitsInputs =
+	| TemperatureUnitsNames
+	| TemperatureUnitsSymbolASCII
+	| TemperatureUnitsSymbols;
 const unitSI: TemperatureUnitsSymbolASCII = "K";
 interface TemperatureUnitInfo {
 	/**
