@@ -79,7 +79,7 @@ This does not request any runtime permission.
   ```
 - ```ts
   const instance = new Temperature(298.15, "K");
-  
+
   instance.toValue("C");
   //=> 25
 
